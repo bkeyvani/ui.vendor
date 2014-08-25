@@ -1,6 +1,9 @@
 # Analytics info
 google_analytics_id: UA-XXXXXXX-XX
 
+# Site-wide variables
+title: "CPCC Theme Landing Page"
+
 # Where things are
 source:      .
 destination: ./_site
