@@ -1,7 +1,10 @@
 ---
 layout: landing-nav
-theme: home
+title: "CPCC Public Directory"
 sidebar: ""
+logo: ""
+location: root
+navItems: "mainNav-landing"
 ---
 
 <div class="panel-group" id="accordion">
@@ -12,7 +15,7 @@ sidebar: ""
       </div>
     </a>
     <div id="collapseOne" class="panel-collapse collapse">
-      <?php include ('inc/dept-table.php'); ?>
+      {% include dept-table.html %}
     </div><!-- / #collapseOne -->
   </div><!-- / .panel.panel-default -->
   <div class="panel panel-default">
@@ -44,7 +47,7 @@ sidebar: ""
       </div>
     </a>
     <div id="collapseThree" class="panel-collapse collapse">
-      <?php include ('inc/dept-table.php'); ?>      
+      {% include dept-table.html %}
     </div><!-- / #collapseThree -->
   </div><!-- / .panel.panel-default -->
   <div class="panel panel-default">
@@ -54,7 +57,7 @@ sidebar: ""
       </div>
     </a>
     <div id="collapseFour" class="panel-collapse collapse">
-      <?php include('inc/programs.php') ?>
+      {% include programs.html %}
     </div><!-- / #collapseFour -->
   </div><!-- / .panel.panel-default -->
   <div class="panel panel-default">
@@ -64,7 +67,7 @@ sidebar: ""
       </div>
     </a>
     <div id="collapseFive" class="panel-collapse collapse">
-      <?php include ('inc/dept-table.php'); ?>
+      {% include dept-table.html %}
     </div><!-- / #collapseFive -->
   </div><!-- / .panel.panel-default -->
   <div class="panel panel-default">
@@ -92,3 +95,5 @@ sidebar: ""
     </div><!-- / #collapseSeven -->
   </div><!-- / .panel.panel-default -->
 </div><!-- / #accordion -->
+
+{% include dept-modals.html %}
