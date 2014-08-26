@@ -39,19 +39,16 @@
       <div class="col-sm-3 {{ page.sidebar }}">
       </div>
    </div>
-  </div>
+  </div><!-- /.container.page -->
 
   {% include ribbon-header-nav.html %}
 
-  <div class="row">
-    <div class="container inner">
-      <div class="main-content">
-
-        {{ content }}
-
-      </div><!-- /.main-content -->
-    </div><!-- /.container.inner -->
-  </div><!-- /.row -->
+  <div class="container inner">
+    <div class="main-content">
+      {% include search-appliance.html %}
+      {{ content }}
+    </div><!-- /.main-content -->
+  </div><!-- /.container.inner -->
 
   {% include footer.html %}
 
