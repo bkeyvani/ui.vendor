@@ -41,16 +41,20 @@
    </div>
   </div><!-- /.container.page -->
 
-  {% include ribbon-header-nav.html %}
+  {% if page.template == "with-logo" %}
+    {% include ribbon-header-nav-logo.html %}
+  {% else %}
+    {% include ribbon-header-nav.html %}
+  {% endif %}
 
-  <div class="container inner">
-    <div class="main-content">
-      {% include search-appliance.html %}
-      {{ content }}
-    </div><!-- /.main-content -->
-  </div><!-- /.container.inner -->
+  <div class="row">
+    <div class="container inner">
+      <div class="main-content">
+        {{ content }}
+      </div><!-- /.main-content -->
+    </div><!-- /.container.inner -->
+  </div><!-- /.row -->
 
-  {% include dept-modals.html %}
   {% include footer.html %}
 
 </body>
