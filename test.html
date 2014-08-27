@@ -1,0 +1,36 @@
+---
+layout: landing-nav
+title: "CPCC Public Directory"
+sidebar: ""
+logo: ""
+location: root
+navItems: 
+  - CPCC Public Directory
+contents:
+  - 1: Administrative Offices
+  - 2: Campuses
+  - 3: Corporate & Continuing Education
+  - 4: Programs of Study
+  - 5: Resources and Services
+  - 6: Off-Campus Directories
+  - 7: Service Questionare
+---
+
+<div class="panel-group" id="accordion">
+{% for content_hash in page.contents %}
+  {% for content in content_hash %}
+    <div class="panel panel-default">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{content[0]}}">
+        <div class="panel-heading">
+          <h4 class="panel-title">{{ content[1] }}</h4>
+        </div>
+      </a>
+      <div id="collapse{{content[0]}}" class="panel-collapse collapse">
+        {% include dept-table.html %}
+      </div><!-- / #collapseOne -->
+    </div><!-- / .panel.panel-default -->
+  {% endfor %}
+{% endfor %}
+
+
+</div><!-- / #accordion -->
