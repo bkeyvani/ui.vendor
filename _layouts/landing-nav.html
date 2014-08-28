@@ -3,9 +3,15 @@
 ---
 
 {% if page.location == "root" %}
-    {% assign leadingpath = '.' %}
+  {% assign leadingpath = '.' %}
 {% else %}
-    {% assign leadingpath = '..' %}
+  {% assign leadingpath = '..' %}
+{% endif %}
+
+{% if page.logo %} 
+  {% assign ribbon = 'ribbon-header-nav-logo.html' %}
+{% else %}
+  {% assign ribbon = 'ribbon-header-nav.html' %}
 {% endif %}
 
 <!DOCTYPE html>
@@ -33,7 +39,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="{{ page.logo }}">
+<body class="{% if page.logo %} logo {% endif %}">
   <div class="container page">
     <div class="main">
       <div class="col-sm-3 {{ page.sidebar }}">
@@ -41,12 +47,8 @@
    </div>
   </div><!-- /.container.page -->
 
-  {% if page.template == "with-logo" %}
-    {% include ribbon-header-nav-logo.html %}
-  {% else %}
-    {% include ribbon-header-nav.html %}
-  {% endif %}
-
+    {% include {{ ribbon }} %}
+  
   <div class="row">
     <div class="container inner">
       <div class="main-content">
