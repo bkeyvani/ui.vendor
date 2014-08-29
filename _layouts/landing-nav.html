@@ -3,9 +3,15 @@
 ---
 
 {% if page.location == "root" %}
-    {% assign leadingpath = '.' %}
+  {% assign leadingpath = '.' %}
 {% else %}
-    {% assign leadingpath = '..' %}
+  {% assign leadingpath = '..' %}
+{% endif %}
+
+{% if page.logo %} 
+  {% assign ribbon = 'ribbon-header-nav-logo.html' %}
+{% else %}
+  {% assign ribbon = 'ribbon-header-nav.html' %}
 {% endif %}
 
 <!DOCTYPE html>
@@ -17,11 +23,11 @@
   <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
 
   <!-- Bootstrap -->
-  <link href="{{ leadingpath }}/assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="{{ leadingpath }}/assets/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="{{ site.baseurl }}/assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ site.baseurl }}/assets/css/bootstrap-theme.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link href="{{ leadingpath }}/assets/css/cp-custom.css" rel="stylesheet">
+  <link href="{{ site.baseurl }}/assets/css/cp-custom.css" rel="stylesheet">
 
   <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
 
@@ -33,7 +39,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="{{ page.logo }}">
+<body class="{% if page.logo %} logo {% endif %}">
   <div class="container page">
     <div class="main">
       <div class="col-sm-3 {{ page.sidebar }}">
@@ -41,14 +47,15 @@
    </div>
   </div><!-- /.container.page -->
 
-  {% include ribbon-header-nav.html %}
-
-  <div class="container inner">
-    <div class="main-content">
-      {% include search-appliance.html %}
-      {{ content }}
-    </div><!-- /.main-content -->
-  </div><!-- /.container.inner -->
+    {% include {{ ribbon }} %}
+  
+  <div class="row">
+    <div class="container inner">
+      <div class="main-content">
+        {{ content }}
+      </div><!-- /.main-content -->
+    </div><!-- /.container.inner -->
+  </div><!-- /.row -->
 
   {% include footer.html %}
 

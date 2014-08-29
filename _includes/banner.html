@@ -26,14 +26,16 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse-2">
           <ul class="nav navbar-nav cpcc-main-nav">
-            {% for item in page.navItems %}
-            <li><a href="#">{{ item }}</a></li>
+            {% for navItems_hash in page.navItems %}
+              {% for item in navItems_hash %}
+                <li><a href="#">{{ item[1] }}</a></li>
+              {% endfor %}
             {% endfor %}
           </ul> 
         </div><!-- /.navbar-collapse -->
       </nav>
-  {% else %}
-  <h1>{{ page.navItems }}</h1>
-  {% endif %}
-</div>
+    {% else %}
+    <h1>{{ page.navItems }}</h1>
+    {% endif %}
+  </div>
 </div><!-- /.row.banner.banner-cpcc -->
