@@ -41,7 +41,7 @@ excerpt_separator: "\n\n"
 detach:  false
 port:    4000
 host:    0.0.0.0
-baseurl: "/ui.vendor" # does not include hostname
+baseurl: "/pages/babakkeyvani/ui.vendor" # does not include hostname. setting for 'babakkeyvani' repo 'gh-pages'.
 
 # Backwards-compatibility
 relative_permalinks: false
