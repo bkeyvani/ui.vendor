@@ -2,12 +2,6 @@
 
 ---
 
-{% if page.location == "root" %}
-  {% assign leadingpath = '.' %}
-{% else %}
-  {% assign leadingpath = '..' %}
-{% endif %}
-
 {% if page.logo %} 
   {% assign ribbon = 'ribbon-header-nav-logo.html' %}
 {% else %}
