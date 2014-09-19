@@ -29,7 +29,7 @@
 <body class="{% if page.logo %} logo {% endif %}">
   <div class="container page">
     <div class="main">
-      <div class="col-sm-3 {{ page.sidebar }}">
+      <div class="col-sm-3 {% if page.sidebar %} sidebar {% endif %}">
       </div>
    </div>
   </div><!-- /.container.page -->
@@ -42,9 +42,20 @@
 
   <div class="row">
     <div class="container inner">
+
+  {% if page.sidebar %} 
+    <div class="row">
+      {% include sidebar.html %}
+      <div class="col-sm-9 main-content">
+          {{ content }}
+      </div><!-- /.main-content -->
+    </div><!-- /.row -->
+  {% else %}
       <div class="main-content">
         {{ content }}
       </div><!-- /.main-content -->
+  {% endif %}
+
     </div><!-- /.container.inner -->
   </div><!-- /.row -->
 

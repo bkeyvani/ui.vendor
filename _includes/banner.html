@@ -11,7 +11,13 @@
             <span class="icon-bar"></span>
           </button>
           <span class="visible-xs">
-            <div class="col-xs-2"></div>
+            <div class="col-xs-2">
+              {% if page.sidebar %}
+              <button id="navigator" class="btn btn-default btn-md pull-left nav-btn-lft">
+                <span id="spinspan" class="glyphicon glyphicon-chevron-right rotate-back"></span>
+              </button>
+              {% endif %}
+            </div>
             <div class="col-xs-8 banner-middle">
               <!-- Seach Appliance -->
               <div class="input-group">
