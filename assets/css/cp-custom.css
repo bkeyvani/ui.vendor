@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /* CSS Document */
+/* This style sheet contains selectors to style the theme ui.vendor */
 
 /* Resets */
 input, select, textarea { 
@@ -13,6 +14,7 @@ input, select, textarea {
 
 
 /* /resets */
+
 html {
 	height:100%;
 }
@@ -26,21 +28,30 @@ body {
 
 }
 
+/* Needed with expanded header to move body content farther down the page than needed with collapsed header */
+
 body.logo {
 	padding-top:180px;
 }
 
-
-
+/* Bundles all elements of vendor theme navigation together */ 
 .navwrap {
 	z-index: 10;
-	position: fixed;
+	position: fixed; /* change to relative if you want the header to scroll with the page */
 	top: 0;
 	margin: 0 auto;
 	width: 100%;
 }
 
-/* preformatted text styles - mostly for code examples */
+.footerwrap {
+	z-index: 10;
+	position: fixed; /* change to relative if you want the header to scroll with the page */
+	bottom: 0;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* preformatted text styles - mostly for code examples in the style guide; these override some styles in the style guide style sheet */
 .tag {
     color: #00ff00;
 }
@@ -246,7 +257,7 @@ form.sg-nav select {
 
 /* /breadcrumb styles */
 
-/*Responsive iframe classes*/
+/* Responsive iframe classes */
 .media-container {
 	margin-top:25px;
 	position: relative;
@@ -297,6 +308,10 @@ th, td {
 	font-size: 14px;
 }
 
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand.text {
+		margin-left:-30px;
+	}
+
 h1, .h1 {
 	font-size:34px;
 }
@@ -325,6 +340,9 @@ dt {
 ol, ul, dd {
 	padding-left:25px;
 }
+
+/* Navigational Elements - some override Bootstraps defaults, some are custom to CPCC to create global ribbon and main navigation banner */
+/* ribbon = CPCC Global Ribbon */
 
 .ribbon {
 	background-color: #000;
@@ -356,24 +374,12 @@ ol, ul, dd {
 	max-height: 35px;
 }
 
-
-/*.ribbon .navbar-brand {
-	padding:10px;
-}
-
-.ribbon .navbar-nav>li>a, .ribbon .navbar-collapse {
-padding-top: 10px;
-padding-bottom: 10px;
-}
-*/
-
 .cpcc-header {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	font-size: 24px;
 	text-align: left;
 	background: #FBF7F4;
-
 }
 
 .cpcc-header h1 {
@@ -419,8 +425,6 @@ div#navbar-collapse-2.navbar-collapse {
 	padding-right:0px;
 }
 
-
-
 .navbar-inverse .navbar-nav>li>a {
 	color: #fff;
 }
@@ -439,10 +443,8 @@ div#navbar-collapse-2.navbar-collapse {
 	background-color: #222;
 }
 
-
 .banner-lg {
 	min-height:80px;
-	
 }
 
 .banner-cpcc button, .banner-cpcc a.btn {
@@ -463,28 +465,17 @@ div#navbar-collapse-2.navbar-collapse {
 	border-color: #888;
 }
 
-
 .banner-cpcc, .banner-cpcc .container .navbar .navbar-header .navbar-toggle, button#navigator {
 	color:#fff;
-	
 	background: #007550; /* Old browsers */
-
-	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-	
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNzU1MCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	
 	background: -moz-linear-gradient(top,  #007550 0%, #004D34 100%); /* FF3.6+ */
-	
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#007550), color-stop(100%,#004D34)); /* Chrome,Safari4+ */
-	
 	background: -webkit-linear-gradient(top,  #007550 0%,#004D34 100%); /* Chrome10+,Safari5.1+ */
-	
 	background: -o-linear-gradient(top,  #007550 0%,#004D34 100%); /* Opera 11.10+ */
-	
 	background: -ms-linear-gradient(top,  #007550 0%,#004D34 100%); /* IE10+ */
-	
 	background: linear-gradient(to bottom,  #007550 0%,#004D34 100%); /* W3C */
-	
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff007550', endColorstr='#ff004D34',GradientType=0 ); /* IE6-8 */
 }
 
@@ -496,21 +487,13 @@ div#navbar-collapse-2.navbar-collapse {
 	color:#fff;
 	background: #0A3E74; /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-	
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNzU1MCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	
 	background: -moz-linear-gradient(top,  #0A3E74 0%, #03274C 100%); /* FF3.6+ */
-	
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0A3E74), color-stop(100%,#03274C)); /* Chrome,Safari4+ */
-	
 	background: -webkit-linear-gradient(top,  #0A3E74 0%,#03274C 100%); /* Chrome10+,Safari5.1+ */
-	
 	background: -o-linear-gradient(top,  #0A3E74 0%,#03274C 100%); /* Opera 11.10+ */
-	
 	background: -ms-linear-gradient(top,  #0A3E74 0%,#03274C 100%); /* IE10+ */
-	
 	background: linear-gradient(to bottom,  #0A3E74 0%,#03274C 100%); /* W3C */
-	
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0A3E74', endColorstr='#ff03274C',GradientType=0 ); /* IE6-8 */
 }
 
@@ -530,6 +513,7 @@ div#navbar-collapse-2.navbar-collapse {
 
 /* Application Layout and Style Selectors */
 
+/* Main Content Container Background */
 .page {
 	position:fixed;
 	bottom:0;
@@ -546,8 +530,11 @@ div#navbar-collapse-2.navbar-collapse {
 	position:relative;
 	left:-50%;	
 	width:100%;
-	
 }
+
+/* /Main Content Container Background */
+
+/* Application Navigation Elements */
 
 .nav-btn-lft, .nav-btn-rt {
 	min-width:40px;
@@ -560,7 +547,14 @@ div#navbar-collapse-2.navbar-collapse {
 	z-index:1;
 }
 
+/* /Application Navigation Elements */
 
+/* Main Content */
+
+.row.row-main {
+	margin-left:0px;
+	margin-right:0px;
+}
 
 .container.inner {
 	position:relative;
@@ -568,6 +562,8 @@ div#navbar-collapse-2.navbar-collapse {
 	z-index: 5;
 	
 }
+
+/* Sidebar Styles and overrides */
 
 .container.inner.sidebar-nosearch {
 	padding-top:0px;
@@ -621,7 +617,6 @@ div#navbar-collapse-2.navbar-collapse {
 	color:#007551;
 }
 
-
 .form-control:focus, .btn-default:focus, .form-control:hover, .btn-default:hover, .form-control:active, .btn-default:active {
 	border-color: #2A9E7B;
 	outline: 0;
@@ -656,8 +651,6 @@ div#navbar-collapse-2.navbar-collapse {
 .sidebar-content .panel-group .panel {
 	border-radius: 0px;
 }
-
-
 
 .sidebar-content .list-group {
 	background:#FBF7F4;
@@ -763,14 +756,6 @@ div#navbar-collapse-2.navbar-collapse {
 	border-top-left-radius: 0px;
 }
 
-footer {
-	position:fixed;
-	bottom:0;
-	left:0;
-	width:110%;
-	z-index:15;
-}
-
 /* HELPER CLASSES */
 
 .bmargin25 {
@@ -817,10 +802,14 @@ footer {
 	body {
 		background: #FBF7F4;
 	}
-	
+
+	.footerwrap {
+		z-index:5;
+	}
+
 	.main-content {
-		margin-left:15px;
-		margin-right:15px;
+		margin-left:0;
+		margin-right:0;
 		z-index:5;  /* for jquery UI display */
 	}
 	
@@ -887,11 +876,6 @@ footer {
 		border-radius: 0px;
 	}
 	
-	/*.container.inner.sidebar1 {
-		padding-top: 15px;
-	}*/
-	
-	
 	.sidebar-nav .navbar-header .navbar-toggle {
 		margin-right: 5px;
 	}
@@ -901,7 +885,7 @@ footer {
 	}
 
 	.sidebar-content .panel-group {
-		margin-right: 0px; */
+		margin-right: 0px; 
 	}
 
 	.sidebar-content .list-group {
@@ -951,7 +935,6 @@ footer {
 		top:173px;	
 	}
 	
-		
 	.sidenav.on {    		
 		width:100%;
 		right:0%;  			
@@ -1002,7 +985,6 @@ footer {
 		max-width: 80%;
 	}
 	
-	
 }
 
 @media (max-width:479px) {
@@ -1029,5 +1011,14 @@ footer {
 	}
 
 
+}
+
+@media (max-width: 379px) {
+
+	.navbar-search {
+		width:80% !important;
+		padding-right:0px;
+
+	}
 }
 
